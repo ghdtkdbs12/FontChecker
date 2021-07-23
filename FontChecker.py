@@ -1,0 +1,231 @@
+#-------------------------------import 설정-------------------------------#
+import tkinter
+from tkinter import Text, getboolean, ttk
+from tkinter import scrolledtext
+from tkinter.constants import MULTIPLE
+#-------------------------------import 설정-------------------------------#
+ 
+
+#-------------------------------윈도우 창 설정-------------------------------#
+window = tkinter.Tk()
+window.title("Font Check !")
+window.geometry('620x750')
+ 
+# preventing GUI from resizing
+window.resizable(False, False)
+#-------------------------------윈도우 창 설정-------------------------------#
+
+
+#-------------------------------메인화면 설정-------------------------------#
+# Label 시작 안내 (첫번재 문장)
+lbl_before = ttk.Label(window, text="한/영 타자 위치기준 번역할 내용을 입력 해주세요.")
+lbl_before.grid(column=0, row=0)
+ 
+#줄바꿈용 Label1
+lbl_blank1 = ttk.Label(window, text=" ")
+lbl_blank1.grid(column=0, row=1)
+
+# Label 입력창 라벨 안내
+lbl_input = ttk.Label(window, text="표본으로 쓸 문장을 입력 :")
+lbl_input.grid(column=0, row=2)
+
+# Text Box 기준되는 문장 입력창
+txt_target = tkinter.StringVar()
+txtbox = ttk.Entry(window, width=38, textvariable=txt_target)
+txtbox.grid(column=0, row=3)
+
+#줄바꿈용 Label2
+lbl_blank2 = ttk.Label(window, text=" ")
+lbl_blank2.grid(column=0, row=4)
+
+#설명칸
+lbl_Exp1 = ttk.Label(window, text="-----------------------------------------------")
+lbl_Exp2 = ttk.Label(window, text="|  FontChecker. made by 홍승진                 |")
+lbl_Exp3 = ttk.Label(window, text="|      2021. 07. 23                                    |")
+lbl_Exp4 = ttk.Label(window, text="-----------------------------------------------")
+lbl_Exp5 = ttk.Label(window, text="")
+lbl_Exp1.grid(column=1, row=0)
+lbl_Exp2.grid(column=1, row=1)
+lbl_Exp3.grid(column=1, row=2)
+lbl_Exp4.grid(column=1, row=3)
+lbl_Exp5.grid(column=1, row=4)
+
+
+#-------------------------------메인화면 설정-------------------------------#
+
+
+
+#------폰트 리스트1------
+# 폰트 영역 안내
+lbl_input = ttk.Label(window, text="-------------- 한글Font 번역 결과  --------------")
+lbl_input.grid(column=0, row=5)
+
+#줄바꿈용 공백 Label
+lbl_blank3 = ttk.Label(window, text=" ")
+lbl_blank3.grid(column=0, row=6)
+
+lbl_Notice1 = ttk.Label(window, text="폰트 : 맑은 고딕")
+lbl_Notice1.grid(column=0, row=7)
+txt_output1 = ttk.Entry(window, width=38, text="", textvariable=txt_target, font=("맑은 고딕", 10))
+txt_output1.grid(column=0, row=8)
+lbl_blank3 = ttk.Label(window, text="")
+lbl_blank3.grid(column=0, row=9)
+
+lbl_Notice2 = ttk.Label(window, text="폰트 : 궁서")
+lbl_Notice2.grid(column=0, row=10)
+txt_output2 = ttk.Entry(window, width=38, text="", textvariable=txt_target, font=("궁서", 11))
+txt_output2.grid(column=0, row=11)
+lbl_blank4 = ttk.Label(window, text="")
+lbl_blank4.grid(column=0, row=12)
+
+lbl_Notice3 = ttk.Label(window, text="폰트 : 굴림체")
+lbl_Notice3.grid(column=0, row=13)
+txt_output3 = ttk.Entry(window, width=38, text="", textvariable=txt_target, font=("굴림체", 10))
+txt_output3.grid(column=0, row=14)
+lbl_blank5 = ttk.Label(window, text="")
+lbl_blank5.grid(column=0, row=15)
+
+lbl_Notice4 = ttk.Label(window, text="폰트 : 나눔고딕")
+lbl_Notice4.grid(column=0, row=16)
+txt_output4 = ttk.Entry(window, width=38, text="", textvariable=txt_target, font=("나눔고딕", 10))
+txt_output4.grid(column=0, row=17)
+lbl_blank6 = ttk.Label(window, text="")
+lbl_blank6.grid(column=0, row=18)
+
+lbl_Notice5 = ttk.Label(window, text="폰트 : 바탕")
+lbl_Notice5.grid(column=0, row=19)
+txt_output5 = ttk.Entry(window, width=38, text="", textvariable=txt_target, font=("바탕", 10))
+txt_output5.grid(column=0, row=20)
+lbl_blank7 = ttk.Label(window, text="")
+lbl_blank7.grid(column=0, row=21)
+
+lbl_Notice6 = ttk.Label(window, text="폰트 : HY견고딕")
+lbl_Notice6.grid(column=0, row=22)
+txt_output6 = ttk.Entry(window, width=38, text="", textvariable=txt_target, font=("HY견고딕", 10))
+txt_output6.grid(column=0, row=23)
+lbl_blank8 = ttk.Label(window, text="")
+lbl_blank8.grid(column=0, row=24)
+
+lbl_Notice7 = ttk.Label(window, text="폰트 : HY견고딕")
+lbl_Notice7.grid(column=0, row=25)
+txt_output7 = ttk.Entry(window, width=38, text="", textvariable=txt_target, font=("HY견고딕", 10))
+txt_output7.grid(column=0, row=26)
+lbl_blank9 = ttk.Label(window, text="")
+lbl_blank9.grid(column=0, row=27)
+
+lbl_Notice7 = ttk.Label(window, text="폰트 : HY엽서M")
+lbl_Notice7.grid(column=0, row=28)
+txt_output7 = ttk.Entry(window, width=34, text="", textvariable=txt_target, font=("HY엽서M", 10))
+txt_output7.grid(column=0, row=29)
+lbl_blank9 = ttk.Label(window, text="")
+lbl_blank9.grid(column=0, row=30)
+
+lbl_Notice7 = ttk.Label(window, text="폰트 : 휴먼매직체")
+lbl_Notice7.grid(column=0, row=31)
+txt_output7 = ttk.Entry(window, width=38, text="", textvariable=txt_target, font=("휴먼매직체", 10))
+txt_output7.grid(column=0, row=32)
+lbl_blank9 = ttk.Label(window, text="")
+lbl_blank9.grid(column=0, row=33)
+
+lbl_Notice7 = ttk.Label(window, text="폰트 : 휴먼편지체")
+lbl_Notice7.grid(column=0, row=34)
+txt_output7 = ttk.Entry(window, width=38, text="", textvariable=txt_target, font=("휴먼편지체", 10))
+txt_output7.grid(column=0, row=35)
+lbl_blank9 = ttk.Label(window, text="")
+lbl_blank9.grid(column=0, row=36)
+#------폰트 리스트1------
+
+
+#------폰트 리스트2------
+# 폰트 영역 안내
+lbl_input = ttk.Label(window, text="--------------  영어Font 번역 결과  --------------")
+lbl_input.grid(column=1, row=5)
+
+#줄바꿈용 공백 Label
+lbl_blank3 = ttk.Label(window, text=" ")
+lbl_blank3.grid(column=1, row=6)
+
+lbl_Notice1 = ttk.Label(window, text="폰트 : Times New Roman")
+lbl_Notice1.grid(column=1, row=7)
+txt_output1 = ttk.Entry(window, width=38, text="", textvariable=txt_target, font=("Times New Roman", 10))
+txt_output1.grid(column=1, row=8)
+lbl_blank3 = ttk.Label(window, text="")
+lbl_blank3.grid(column=1, row=9)
+
+lbl_Notice2 = ttk.Label(window, text="폰트 : Calibri")
+lbl_Notice2.grid(column=1, row=10)
+txt_output2 = ttk.Entry(window, width=38, text="", textvariable=txt_target, font=("Calibri", 11))
+txt_output2.grid(column=1, row=11)
+lbl_blank4 = ttk.Label(window, text="")
+lbl_blank4.grid(column=1, row=12)
+
+lbl_Notice3 = ttk.Label(window, text="폰트 : American Typewriter")
+lbl_Notice3.grid(column=1, row=13)
+txt_output3 = ttk.Entry(window, width=38, text="", textvariable=txt_target, font=("American Typewriter", 10))
+txt_output3.grid(column=1, row=14)
+lbl_blank5 = ttk.Label(window, text="")
+lbl_blank5.grid(column=1, row=15)
+
+lbl_Notice4 = ttk.Label(window, text="폰트 : Corbel")
+lbl_Notice4.grid(column=1, row=16)
+txt_output4 = ttk.Entry(window, width=38, text="", textvariable=txt_target, font=("Corbel", 10))
+txt_output4.grid(column=1, row=17)
+lbl_blank6 = ttk.Label(window, text="")
+lbl_blank6.grid(column=1, row=18)
+
+lbl_Notice5 = ttk.Label(window, text="폰트 : Monaco")
+lbl_Notice5.grid(column=1, row=19)
+txt_output5 = ttk.Entry(window, width=34, text="", textvariable=txt_target, font=("Monaco", 10))
+txt_output5.grid(column=1, row=20)
+lbl_blank7 = ttk.Label(window, text="")
+lbl_blank7.grid(column=1, row=21)
+
+lbl_Notice6 = ttk.Label(window, text="폰트 : Century")
+lbl_Notice6.grid(column=1, row=22)
+txt_output6 = ttk.Entry(window, width=38, text="", textvariable=txt_target, font=("Century", 10))
+txt_output6.grid(column=1, row=23)
+lbl_blank8 = ttk.Label(window, text="")
+lbl_blank8.grid(column=1, row=24)
+
+lbl_Notice7 = ttk.Label(window, text="폰트 : LG Display-Light")
+lbl_Notice7.grid(column=1, row=25)
+txt_output7 = ttk.Entry(window, width=38, text="", textvariable=txt_target, font=("LG Display-Light", 10))
+txt_output7.grid(column=1, row=26)
+lbl_blank9 = ttk.Label(window, text="")
+lbl_blank9.grid(column=1, row=27)
+
+lbl_Notice7 = ttk.Label(window, text="폰트 : Impact")
+lbl_Notice7.grid(column=1, row=28)
+txt_output7 = ttk.Entry(window, width=38, text="", textvariable=txt_target, font=("Impact", 10))
+txt_output7.grid(column=1, row=29)
+lbl_blank9 = ttk.Label(window, text="")
+lbl_blank9.grid(column=1, row=30)
+
+lbl_Notice7 = ttk.Label(window, text="폰트 : Ink Free")
+lbl_Notice7.grid(column=1, row=31)
+txt_output7 = ttk.Entry(window, width=38, text="", textvariable=txt_target, font=("Ink Free", 10))
+txt_output7.grid(column=1, row=32)
+lbl_blank9 = ttk.Label(window, text="")
+lbl_blank9.grid(column=1, row=33)
+
+lbl_Notice7 = ttk.Label(window, text="폰트 : Monotype Corsiva")
+lbl_Notice7.grid(column=1, row=34)
+txt_output7 = ttk.Entry(window, width=38, text="", textvariable=txt_target, font=("Monotype Corsiva", 10))
+txt_output7.grid(column=1, row=35)
+lbl_blank9 = ttk.Label(window, text="")
+lbl_blank9.grid(column=1, row=36)
+#------폰트 리스트2------
+
+
+
+
+
+# start GUI
+window.mainloop()
+
+
+#프로그래밍 진행
+#1.결과창을 텍스트 박스로 바꾼다. (완료!!)
+#2.받은 문자열을 배열로 해서 전부 받아버린다.
+#3.반복문 + 스위치문을 통하여 자판에 대응되도록 한/영 변환을 해버린다.
+#4.텍스트 박스 내용 자동복사 버튼 만들기 (분명 가능할것 같은데...)
